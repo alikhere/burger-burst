@@ -40,7 +40,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 Aenean commodo ligula eget dolor. Aenean massa. 
 Cum sociis natoque penatibus et magnis dis parturient montes.
 
-<i class="fa-solid fa-check"></i> 
+<i classname="fa-solid fa-check"></i> 
 Best Price
 Fresh Ingredient
 Best Service
@@ -51,6 +51,7 @@ About Us
 OUR BEST MENU
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
 Aenean commodo ligula eget dolor. Aenean massa.
+{`btn ${isActive ? "bg-secondaryColor text-black" : "bg-primaryColorLight"}`} onClick={()=>setIsActive(!isActive)}
 
 All - Food - Snack - Beverage
 
