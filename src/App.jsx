@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from './conponents/Navbar';
 import Menu from './conponents/Menu';
+import Review from './conponents/Review';
+import Contact from './conponents/Contact';
+import Footer from './conponents/Footer';
 
 
 function App() {
@@ -8,7 +11,7 @@ function App() {
 
   return (
     <> {/* Header  */}
-      <header className='bg-primaryColor fixed top-0 left-0 w-full z-50'>
+      <header className='bg-primaryColor fixed top-0 left-0 w-full z-50 dark:bg-darkColor'>
         <Navbar/>
       </header>
 
@@ -70,7 +73,7 @@ function App() {
               </div>
             </div>
             {/* card 2 */}
-            <div className='bg-redColor flex py-3 rounded-lg overflow-hidden md:flex-1'>
+            <div className='bg-redColor flex py-3 rounded-lg overflow-hidden md:flex-1 '>
               <div className='basis-1/3 relative'><img src="img/snack-1.png" alt="category imge" className='absolute w-28 -bottom-4 -left-4' /></div>
 
               <div>
@@ -82,7 +85,7 @@ function App() {
               </div>
             </div>
             {/* card 3 */}
-            <div className='bg-greenColor flex py-3 rounded-lg overflow-hidden md:flex-1'>
+            <div className='bg-greenColor flex py-3 rounded-lg overflow-hidden md:flex-1 '>
               <div className='basis-1/3 relative'><img src="img/beverage-2.png" alt="category imge" className='absolute w-28 -bottom-4 -left-4' /></div>
 
               <div>
@@ -98,9 +101,9 @@ function App() {
 
         {/* promo seciton */}
         <section>
-          <div className='container flex flex-col gap-5 lg:gap-10 lg:flex-row '>
+          <div className='container flex flex-col gap-5 lg:gap-10 lg:flex-row  '>
             {/* card 1 */}
-            <div className='bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1'>
+            <div className='bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 dark:bg-darkColorLight'>
               <img src="img/promo-1.png" alt="promo image" className='w-40 mx-auto hover:animate-movingY md:mx-5 '/>
 
               <div className='space-y-2 pt-5 md:pt-0 '>
@@ -113,7 +116,7 @@ function App() {
               </div>
             </div>
             {/* card 2 */}
-            <div className='bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1'>
+            <div className='bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 dark:bg-darkColorLight'>
               <img src="img/promo-2.png" alt="promo image" className='w-40 mx-auto hover:animate-movingY md:mx-5  '/>
 
               <div className='space-y-2 pt-5 md:pt-0 '>
@@ -135,9 +138,11 @@ function App() {
               <img src="img/about.jpg" alt="about image" className='rounded-lg'/>
             </div>
 
-            <div className='flex-1' >
+            <div className='flex-1 y' >
+
               <h2 className='section__title'>FIND FOOD AND DRINKS, ALL-IN-ONE PLACE FOR YOUR BEST TASTE.</h2>
               <div className="separator"></div>
+
               <p className='paragraph'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio perferendis eos quos error modi sapiente deserunt ut. Expedita quasi itaque neque cum, nisi dolorum.</p>
 
               <ul className='grid grid-cols-2 py-5 space-y-1'> 
@@ -158,7 +163,8 @@ function App() {
                   Health Protocol
                 </li>
               </ul>
-              <a href="" className='btn btn-primary'>About Us</a>
+
+              <a href="" className='btn btn-primary mx-auto'>About Us</a>
             </div>
           </div>
         </section>
@@ -168,7 +174,18 @@ function App() {
           <Menu/>
         </section>
 
+        {/* review section */}
+        <section>
+          <Review/>
+        </section>
+
+        <Contact/>
+
       </main>
+
+      <footer>
+        <Footer/>
+      </footer>
     </>
   );
 }
