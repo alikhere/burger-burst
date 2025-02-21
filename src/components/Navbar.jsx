@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Navbar() {
+function Navbar({ activeSection, onSetActive }) {
   const [isNavActive, setIsNavActive] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem("mode") === "dark");
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,6 +40,15 @@ function Navbar() {
     });
   };
 
+  const handleNavClick = (section) => {
+    onSetActive(section); // Set active section on click
+    const targetElement = document.getElementById(section);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsNavActive(false); // Close mobile menu after selecting item
+  };
+
   return (
     <nav
       className={`container relative h-14 flex justify-between items-center ${
@@ -56,14 +65,59 @@ function Navbar() {
       <div
         className={`${
           isNavActive ? "flex flex-col items-center" : "hidden"
-        } dark:bg-darkColor absolute top-0 left-0 w-full py-14 bg-primaryColor border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto  md:ml-auto `}
+        } dark:bg-darkColor absolute top-0 left-0 w-full py-14 bg-primaryColor border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto`}
       >
         <ul className="flex flex-col text-center gap-5 md:flex-row">
-          <li><a href="#home" onClick={() => setIsNavActive(false)}>Home</a></li>
-          <li><a href="#about" onClick={() => setIsNavActive(false)}>About Us</a></li>
-          <li><a href="#menu" onClick={() => setIsNavActive(false)}>Menu</a></li>
-          <li><a href="#review" onClick={() => setIsNavActive(false)}>Review</a></li>
-          <li><a href="#contact" onClick={() => setIsNavActive(false)}>Contact</a></li>
+          <li>
+            <a
+              className={`${
+                activeSection === "home" ? "text-secondaryColor" : ""
+              } hover:text-secondaryColor ease-in duration-200 cursor-pointer`} // Added cursor-pointer
+              onClick={() => handleNavClick("home")}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              className={`${
+                activeSection === "about" ? "text-secondaryColor" : ""
+              } hover:text-secondaryColor ease-in duration-200 cursor-pointer`} // Added cursor-pointer
+              onClick={() => handleNavClick("about")}
+            >
+              About Us
+            </a>
+          </li>
+          <li>
+            <a
+              className={`${
+                activeSection === "menu" ? "text-secondaryColor" : ""
+              } hover:text-secondaryColor ease-in duration-200 cursor-pointer`} // Added cursor-pointer
+              onClick={() => handleNavClick("menu")}
+            >
+              Menu
+            </a>
+          </li>
+          <li>
+            <a
+              className={`${
+                activeSection === "review" ? "text-secondaryColor" : ""
+              } hover:text-secondaryColor ease-in duration-200 cursor-pointer`} // Added cursor-pointer
+              onClick={() => handleNavClick("review")}
+            >
+              Review
+            </a>
+          </li>
+          <li>
+            <a
+              className={`${
+                activeSection === "contact" ? "text-secondaryColor" : ""
+              } hover:text-secondaryColor ease-in duration-200 cursor-pointer`} // Added cursor-pointer
+              onClick={() => handleNavClick("contact")}
+            >
+              Contact
+            </a>
+          </li>
         </ul>
 
         {/* Close Button */}

@@ -37,7 +37,7 @@ export default function Review() {
   }, []);
 
   return (
-    <section className="bg-primaryColorLight dark:bg-darkColorLight">
+    <section id="review" className="bg-primaryColorLight dark:bg-darkColorLight">
       <div className="container">
         <div className="max-w-md mx-auto text-center">
           <h2 className="section__title"> CUSTOMER REVIEW</h2>

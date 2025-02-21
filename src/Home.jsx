@@ -2,7 +2,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>
+    <section id='home'>
         <div className='container flex flex-col items-center gap-10 md:flex-row '>
             <div className='mx-auto md:basis-1/2 lg:basis-2/5'>
               <img src="img/home-image.png" alt="" className='w-60 md:w-full animate-movingY' />
@@ -39,7 +39,7 @@ function Home() {
             <a href="# "className='btn btn-primary'>Learn More</a>
             </div>
           </div>
-    </div>
+    </section>
   )
 }
 
