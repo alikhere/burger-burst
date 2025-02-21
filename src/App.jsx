@@ -4,6 +4,8 @@ import Menu from './conponents/Menu';
 import Review from './conponents/Review';
 import Contact from './conponents/Contact';
 import Footer from './conponents/Footer';
+import ScrollUp from './conponents/ScrollUp';
+import Home from './Home';
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
       <main>
       {/* home seciton */}
         <section>
+          <Home/>
           <div className='container flex flex-col items-center gap-10 md:flex-row '>
             <div className='mx-auto md:basis-1/2 lg:basis-2/5'>
               <img src="img/home-image.png" alt="" className='w-60 md:w-full animate-movingY' />
@@ -186,6 +189,7 @@ function App() {
       <footer>
         <Footer/>
       </footer>
+      <ScrollUp/>
     </>
   );
 }
