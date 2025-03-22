@@ -19,7 +19,7 @@ BurgerBurst is a responsive and visually stunning landing page for a burger rest
 
 ## Demo
 
-🔗 **Live Demo**: [BurgerBurst](https://your-demo-link.com)  
+🔗 **Live Demo**: [BurgerBurst](https://burgerr-bburst.netlify.app/)  
 
 
 ## 🛠Tech Stack
